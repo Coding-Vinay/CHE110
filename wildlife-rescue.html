@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Rescue</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team, .methods {
+            margin-bottom: 20px;
+        }
+
+        .success-entry {
+            margin-top: 20px;
+        }
+
+        .success-entry input {
+            padding: 10px;
+            width: 100%;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button, .reset-button {
+            padding: 10px 15px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover, .reset-button:hover {
+            background-color: #1E7B1E;
+        }
+
+        .appreciation {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #228B22;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wildlife Rescue During Forest Fires</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown" style="display: none;">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Wildlife Rescue Methods and Techniques</h2>
+        <div class="methods">
+            <h3>Techniques</h3>
+            <ul>
+                <li>Search and Rescue Operations: Teams are trained to locate and rescue animals in distress.</li>
+                <li>Medical Assistance: First aid and medical treatment for injured wildlife.</li>
+                <li>Rehabilitation: Caring for rescued animals until they can be released back into their habitat.</li>
+                <li>Habitat Restoration: Efforts to restore natural habitats damaged by fire.</li>
+            </ul>
+        </div>
+
+        <div class="team">
+            <h3>Available Teams</h3>
+            <p>Various teams across regions are available for wildlife rescue, including:</p>
+            <ul>
+                <li>Wildlife Rehabilitation Centers</li>
+                <li>Local NGOs focused on animal welfare</li>
+                <li>Volunteer Groups and Citizen Firefighters</li>
+                <li>Government Wildlife Services</li>
+            </ul>
+        </div>
+
+        <div class="success-entry">
+            <h3>Log Successful Wildlife Recovery</h3>
+            <input type="number" id="wildlife-saved" placeholder="Number of Wildlife Saved" min="1">
+            <button class="submit-button" id="submit-entry">Submit Entry</button>
+            <button class="reset-button" id="reset-entry">Reset Total</button>
+            <p class="appreciation" id="appreciation-message"></p>
+        </div>
+
+        <h3>Total Wildlife Saved: <span id="total-saved">0</span></h3>
+    </section>
+
+    <script>
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+
+        // Initialize total saved count from local storage
+        let totalSaved = localStorage.getItem("totalSaved") ? parseInt(localStorage.getItem("totalSaved")) : 0;
+        document.getElementById("total-saved").textContent = totalSaved;
+
+        document.getElementById("submit-entry").addEventListener("click", function() {
+            const savedCount = parseInt(document.getElementById("wildlife-saved").value);
+            if (savedCount && savedCount > 0) {
+                totalSaved += savedCount;
+                localStorage.setItem("totalSaved", totalSaved);
+                document.getElementById("total-saved").textContent = totalSaved;
+
+                // Display appreciation message with animation
+                const appreciationMessage = document.getElementById("appreciation-message");
+                appreciationMessage.textContent = `Thank you! You have successfully logged the recovery of ${savedCount} animals.`;
+                appreciationMessage.classList.add("appreciation");
+                appreciationMessage.style.display = "block";
+
+                // Reset the input field
+                document.getElementById("wildlife-saved").value = '';
+
+                // Animation reset after 2 seconds
+                setTimeout(() => {
+                    appreciationMessage.style.display = "none";
+                }, 2000);
+            } else {
+                alert("Please enter a valid number of wildlife saved.");
+            }
+        });
+
+        document.getElementById("reset-entry").addEventListener("click", function() {
+            if (confirm("Are you sure you want to reset the total wildlife saved? This action cannot be undone.")) {
+                totalSaved = 0;
+                localStorage.setItem("totalSaved", totalSaved);
+                document.getElementById("total-saved").textContent = totalSaved;
+                alert("Total wildlife saved has been reset.");
+            }
+        });
+    </script>
+</body>
+</html>

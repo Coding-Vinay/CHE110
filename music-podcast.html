@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Podcast Platform</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .song-upload {
+            margin-bottom: 20px;
+        }
+
+        .song-list {
+            margin-top: 20px;
+            border-top: 2px solid #228B22;
+            padding-top: 10px;
+        }
+
+        .song-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e9f5e9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .song-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-section {
+            margin-top: 10px;
+        }
+
+        .review-input {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-input textarea {
+            margin-bottom: 10px;
+            resize: none;
+            height: 50px;
+        }
+
+        .rating {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .rating input {
+            margin: 0 5px;
+        }
+
+        .use-of-music {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 2px solid #228B22;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        #user-dropdown {
+            display: none;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #34a853;
+        }
+
+        #user-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire Prevention: Music & Podcast Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Upload Your Songs and Listen</h2>
+        <p>Share your music or podcasts focused on forest fire concerns and prevention. Help spread awareness through your creativity!</p>
+        
+        <div class="song-upload">
+            <input type="text" id="song-title" placeholder="Song Title" required>
+            <input type="file" id="song-file" accept="audio/*" required>
+            <button id="upload-song">Upload Song</button>
+        </div>
+
+        <div class="song-list" id="song-list">
+            <h3>Uploaded Songs</h3>
+            <!-- Uploaded songs will appear here -->
+        </div>
+    </section>
+
+    <section class="use-of-music">
+        <h2>The Use of Music in Forest Fire Awareness</h2>
+        <p>
+            Music can serve as a powerful tool for raising awareness about forest fire prevention and management. Here are several ways music contributes to this cause:
+        </p>
+        <p>
+            1. **Emotional Connection**: Music evokes emotions that can foster a deeper connection to the issues surrounding forest fires. By appealing to listeners’ feelings, songs can inspire action and awareness.
+        </p>
+        <p>
+            2. **Educational Value**: Many songs incorporate educational messages about the importance of preventing forest fires, the consequences of negligence, and how to respond during emergencies. These messages can be more easily remembered when set to music.
+        </p>
+        <p>
+            3. **Community Engagement**: Music has the ability to bring communities together. Events such as benefit concerts can raise funds for fire prevention initiatives while also educating attendees about the issue.
+        </p>
+        <p>
+            4. **Cultural Impact**: In many cultures, music plays a vital role in storytelling. Songs that tell the story of a community affected by forest fires can highlight the human impact of these disasters, encouraging listeners to take the threat seriously.
+        </p>
+        <p>
+            5. **Motivational Messages**: Uplifting songs can motivate individuals and communities to participate in fire prevention activities, volunteer for local initiatives, or support policy changes.
+        </p>
+        <p>
+            In conclusion, music is not just a source of entertainment; it can also be a catalyst for change. By spreading messages of prevention and action, music can play a crucial role in combating the threat of forest fires.
+        </p>
+    </section>
+
+    <script>
+        const uploadButton = document.getElementById('upload-song');
+        const songList = document.getElementById('song-list');
+
+        uploadButton.addEventListener('click', function() {
+            const songTitle = document.getElementById('song-title').value;
+            const songFile = document.getElementById('song-file').files[0];
+
+            if (songTitle && songFile) {
+                const songItem = document.createElement('div');
+                songItem.className = 'song-item';
+                songItem.innerHTML = `
+                    <h4>${songTitle}</h4>
+                    <audio controls>
+                        <source src="${URL.createObjectURL(songFile)}" type="${songFile.type}">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="review-section">
+                        <div class="rating">
+                            <label>Rate: </label>
+                            <input type="radio" name="rating-${songTitle}" value="1">1
+                            <input type="radio" name="rating-${songTitle}" value="2">2
+                            <input type="radio" name="rating-${songTitle}" value="3">3
+                            <input type="radio" name="rating-${songTitle}" value="4">4
+                            <input type="radio" name="rating-${songTitle}" value="5">5
+                        </div>
+                        <div class="review-input">
+                            <textarea id="review-${songTitle}" placeholder="Leave a review..."></textarea>
+                            <button onclick="submitReview('${songTitle}')">Submit Review</button>
+                        </div>
+                    </div>
+                    <div id="reviews-${songTitle}"></div>
+                `;
+                songList.appendChild(songItem);
+
+                // Clear input fields
+                document.getElementById('song-title').value = '';
+                document.getElementById('song-file').value = '';
+            } else {
+                alert('Please provide a song title and a file.');
+            }
+        });
+
+        function submitReview(songTitle) {
+            const reviewText = document.getElementById(`review-${songTitle}`).value;
+            const rating = document.querySelector(`input[name="rating-${songTitle}"]:checked`);
+
+            if (reviewText || rating) {
+                const reviewsContainer = document.getElementById(`reviews-${songTitle}`);
+                const reviewItem = document.createElement('div');
+                reviewItem.innerHTML = `
+                    <p><strong>Review:</strong> ${reviewText} <strong>Rating:</strong> ${rating ? rating.value : 'No rating'}</p>
+                `;
+                reviewsContainer.appendChild(reviewItem);
+
+                // Clear review input
+                document.getElementById(`review-${songTitle}`).value = '';
+                if (rating) {
+                    rating.checked = false;
+                }
+            } else {
+                alert('Please provide a review or rating.');
+            }
+        }
+
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>

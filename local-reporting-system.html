@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Reporting System</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #228B22;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #228B22;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #1E7B1E;
+        }
+
+        /* User Dropdown Style */
+        #user-dropdown {
+            display: none;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        #user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #228B22;
+            transition: background-color 0.3s ease;
+        }
+
+        #user-dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Submitted Reports Section */
+        .submitted-reports {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 2px solid #228B22;
+        }
+
+        .report-item {
+            background-color: #e9f9e9;
+            margin: 1rem 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire: Local Reporting System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Local Reporting System</h2>
+        <p>A platform to report forest fire risks and fire-related concerns in your local area. Please fill in the form below to submit your report.</p>
+
+        <form id="report-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location of Concern:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description of the Issue:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+
+        <div class="submitted-reports" id="submitted-reports">
+            <h3>Submitted Reports:</h3>
+            <div id="reports-list"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+
+        document.getElementById("report-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Gather report details
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const description = document.getElementById("description").value;
+
+            // Create report item
+            const reportItem = document.createElement("div");
+            reportItem.className = "report-item";
+            reportItem.innerHTML = `<strong>Name:</strong> ${name}<br><strong>Location:</strong> ${location}<br><strong>Description:</strong> ${description}`;
+
+            // Append report item to the reports list
+            document.getElementById("reports-list").appendChild(reportItem);
+
+            alert('Thank you for your report! We will investigate your concerns.');
+            this.reset(); // Reset the form fields after submission
+        });
+    </script>
+</body>
+</html>

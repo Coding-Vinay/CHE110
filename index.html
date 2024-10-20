@@ -3,27 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forest Fire Prevention</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        header + section, nav + section {
+            margin-top: 20px;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides img {
+            width: 25%;
+            height: 100%;
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .user-menu button {
+            background-color: #fff;
+            color: #228B22;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .user-menu button:hover {
+            background-color: #228B22;
+            color: white;
+        }
+
+        .user-menu button:after {
+            content: '\25BC';
+            margin-left: 10px;
+        }
+
+        .user-options {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #228B22;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: left;
+        }
+
+        .user-options a {
+            display: block;
+            padding: 10px;
+            color: #228B22;
+            text-decoration: none;
+        }
+
+        .user-options a:hover {
+            background-color: #228B22;
+            color: white;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .tab {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #228B22;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .tab h3 {
+            margin-top: 0;
+            color: #228B22;
+        }
+
+        .tab:hover h3 {
+            color: white;
+        }
+
+        .tab p {
+            margin-bottom: 10px;
+        }
+
+        .tab a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #228B22;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .tab a:hover {
+            background-color: white;
+            color: #228B22;
+        }
+
+        /* Sign-In Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content label {
+            margin: 10px 0;
+            display: block;
+            font-weight: bold;
+        }
+
+        .modal-content input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content button {
+            background-color: #228B22;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-content button:hover {
+            background-color: #1E7B1E;
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>This is heading h1</h1>
-    <center>
-        <figure>
-            <img src="html.png" height="150" width="150">
-            <figcaption>Fig 1. Gmail icon</figcaption>
-        </figure>
-    </center>
-     <ul>
-        <li>Title 1</li><br>
-        <li>Title 2</li><br>
-        <ol type="i">
-            <li>Title 2.1</li>
-            <ol type="a">
-                <li>Title 2.1.1</li>
-            </ol>
-        <li><a href="https://www.google.co.in/">Go to Google</a></li><br>
-        </ol>
-        <li>Title 3</li>
-    </ul>
+    <header>
+        <h1>Forest Fire Prevention: Concerns, Causes, and Prevention</h1>
+        
+        <!-- User Menu -->
+        <div class="user-menu">
+            <button id="userButton" onclick="toggleUserOptions()">User</button>
+            <div class="user-options" id="userOptions">
+                <a href="#" onclick="showSignInModal()">Sign In</a>
+                <a href="#" id="logoutButton" style="display:none;" onclick="logout()">Log Out</a>
+                <a href="personal-experiences.html">Rate Us</a>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Image Slider Section -->
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="1.jpeg" alt="Forest Image 1">
+            <img src="1.jpeg" alt="Forest Image 2">
+            <img src="1.jpeg" alt="Forest Image 3">
+            <img src="1.jpeg" alt="Forest Image 4">
+        </div>
+    </div>
+
+    <section>
+        <h2>Overview of Our Website</h2>
+        <p>Explore different sections of our website to learn about forest fire prevention, fire-prone areas, wildlife rescue, and much more. Each section provides valuable information and resources to help you stay safe and informed.</p>
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+            <div class="tab">
+                <h3>Fire-Prone Areas</h3>
+                <p>Learn about regions more susceptible to forest fires and stay updated with the latest risk levels.</p>
+                <a href="fire-prone-areas.html">Explore More</a>
+            </div>
+            <div class="tab">
+                <h3>Fire-Resistant Homes</h3>
+                <p>Discover how to build structures designed to withstand forest fires and protect your home.</p>
+                <a href="fire-resistant-homes.html">Learn More</a>
+            </div>
+            <div class="tab">
+                <h3>Local Reporting System</h3>
+                <p>A platform to report forest fire risks and fire-related concerns in your local area.</p>
+                <a href="local-reporting-system.html">Report Now</a>
+            </div>
+            <div class="tab">
+                <h3>Contact Fire Units</h3>
+                <p>Find contact details for local and native fire protection units in case of emergencies.</p>
+                <a href="fire-protection-units.html">Get Contacts</a>
+            </div>
+            <div class="tab">
+                <h3>NGO Page</h3>
+                <p>Get involved by volunteering or supporting organizations dedicated to fire prevention.</p>
+                <a href="ngo-page.html">Join Now</a>
+            </div>
+            <div class="tab">
+                <h3>Training Videos</h3>
+                <p>Watch educational videos on fire safety, prevention, and response techniques.</p>
+                <a href="training-videos.html">Watch Videos</a>
+            </div>
+            <div class="tab">
+                <h3>Grants & Funding</h3>
+                <p>Learn about available grants and funding for fire prevention projects and research.</p>
+                <a href="grants-funding.html">Find Grants</a>
+            </div>
+            <div class="tab">
+                <h3>Wildlife Rescue</h3>
+                <p>Get contact information for wildlife rescue teams who assist during forest fires.</p>
+                <a href="wildlife-rescue.html">Rescue Help</a>
+            </div>
+            <div class="tab">
+                <h3>Resources</h3>
+                <p>Access a wide range of resources related to forest fire prevention, safety, and recovery.</p>
+                <a href="resources.html">Access Resources</a>
+            </div>
+            <div class="tab">
+                <h3>Education Platform</h3>
+                <p>Participate in e-learning courses on forest fire prevention and safety training.</p>
+                <a href="education-platform.html">Start Learning</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign In Modal -->
+    <div class="modal" id="signInModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign In</h2>
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" placeholder="Your Name" required>
+            <button onclick="signIn()">Sign In</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Image Slider, User Menu, and Sign In Modal -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById('slides');
+        const userOptions = document.getElementById('userOptions');
+        const signInModal = document.getElementById('signInModal');
+        const logoutButton = document.getElementById('logoutButton');
+
+        function changeSlide() {
+            currentSlide = (currentSlide + 1) % 4; // Total 4 slides, index 0-3
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        setInterval(changeSlide, 5000); // Change slide every 5 seconds
+
+        function toggleUserOptions() {
+            userOptions.style.display = userOptions.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-menu button')) {
+                if (userOptions.style.display === 'block') {
+                    userOptions.style.display = 'none';
+                }
+            }
+            if (event.target === signInModal) {
+                closeModal();
+            }
+        };
+
+        function showSignInModal() {
+            signInModal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            signInModal.style.display = 'none';
+        }
+
+        function signIn() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                document.getElementById('userButton').textContent = username;
+                logoutButton.style.display = 'block'; // Show Log Out button
+                closeModal(); // Close the modal
+                userOptions.style.display = 'none'; // Hide user options
+            } else {
+                alert("Please enter a name.");
+            }
+        }
+
+        function logout() {
+            document.getElementById('userButton').textContent = "User"; // Reset button text
+            logoutButton.style.display = 'none'; // Hide Log Out button
+            userOptions.style.display = 'none'; // Hide user options
+        }
+    </script>
 </body>
 </html>

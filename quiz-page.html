@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #228B22;
+        }
+
+        .quiz-container {
+            margin: 20px 0;
+        }
+
+        .question {
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .option {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .submit-button {
+            display: block;
+            background-color: #ffca28;
+            color: #3e2723;
+            padding: 10px 20px;
+            margin: 20px auto;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #ffd54f;
+            transform: scale(1.05);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #d32f2f;
+        }
+
+        .tree-message {
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        /* Correct answer styling */
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* User Dropdown */
+        #user-dropdown {
+            display: none;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #34a853;
+        }
+
+        #user-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Quiz Page</h2>
+        <p>Test your knowledge about forest fire prevention with our interactive quiz!</p>
+
+        <div class="quiz-container">
+            <form id="quizForm">
+                <!-- Questions will be injected here -->
+            </form>
+            <button class="submit-button" onclick="submitQuiz()">Submit Quiz</button>
+            <div id="result" class="result"></div>
+        </div>
+    </section>
+
+    <script>
+        // Questions array
+        const questions = [
+            {
+                question: "What is one of the main causes of forest fires?",
+                options: ["Lightning", "Snow", "Rain", "Fog"],
+                answer: 0
+            },
+            {
+                question: "Which of these is a fire-prone area?",
+                options: ["Desert", "Rainforest", "Grassland", "Wetland"],
+                answer: 1
+            },
+            {
+                question: "What is a firebreak?",
+                options: ["A wall of water", "A path cleared of vegetation", "A type of fire extinguisher", "A special kind of tree"],
+                answer: 1
+            },
+            {
+                question: "Which season is most associated with forest fires?",
+                options: ["Winter", "Spring", "Summer", "Fall"],
+                answer: 2
+            },
+            {
+                question: "What is the best way to prevent a campfire from spreading?",
+                options: ["Using lighter fluid", "Building it on bare soil", "Placing it in tall grass", "Leaving it unattended"],
+                answer: 1
+            },
+            {
+                question: "Which tool is commonly used to fight forest fires?",
+                options: ["Chainsaw", "Rake", "Shovel", "All of the above"],
+                answer: 3
+            },
+            {
+                question: "What should you do if you see smoke in the forest?",
+                options: ["Ignore it", "Call 911", "Take a picture", "Start a fire nearby"],
+                answer: 1
+            },
+            {
+                question: "What color is a fire truck?",
+                options: ["Green", "Blue", "Red", "Black"],
+                answer: 2
+            },
+            {
+                question: "How can you help during a forest fire?",
+                options: ["Join the fire brigade", "Spread rumors", "Evacuate if necessary", "Both 1 and 3"],
+                answer: 3
+            },
+            {
+                question: "What does 'controlled burn' mean?",
+                options: ["A burn that is controlled by the wind", "A fire set intentionally to reduce fuel", "A fire that is started by lightning", "A fire that is illegal"],
+                answer: 1
+            },
+            {
+                question: "What should you do if caught in a forest fire?",
+                options: ["Run towards the fire", "Find a body of water", "Climb a tree", "Stay in place"],
+                answer: 1
+            },
+            {
+                question: "What type of tree is most resistant to fire?",
+                options: ["Pine", "Oak", "Maple", "Cedar"],
+                answer: 3
+            },
+            {
+                question: "How often should you check your smoke detectors?",
+                options: ["Once a year", "Once a month", "Every week", "Only when you move in"],
+                answer: 1
+            },
+            {
+                question: "What is the best way to prepare for a wildfire?",
+                options: ["Pack food", "Gather pets", "Prepare your car", "All of the above"],
+                answer: 3
+            },
+            {
+                question: "Why is it important to plant trees after a fire?",
+                options: ["To help restore the ecosystem", "To create a better view", "To attract tourists", "None of the above"],
+                answer: 0
+            }
+        ];
+
+        // Inject questions into the form
+        const quizForm = document.getElementById('quizForm');
+        questions.forEach((q, index) => {
+            const questionElement = document.createElement('div');
+            questionElement.classList.add('question');
+            questionElement.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            q.options.forEach((option, i) => {
+                questionElement.innerHTML += `
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q${index}" value="${i}" required>
+                            ${option}
+                        </label>
+                    </div>
+                `;
+            });
+            quizForm.appendChild(questionElement);
+        });
+
+        // Submit quiz function
+        function submitQuiz() {
+            let score = 0;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && parseInt(selected.value) === q.answer) {
+                    score++;
+                }
+            });
+
+            resultDiv.innerHTML = `You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>!`;
+
+            if (score < 15) {
+                const treesToPlant = 15 - score;
+                resultDiv.innerHTML += `<br><span class="tree-message">Nice try! You can plant ${treesToPlant} tree(s) to make your score 15!</span>`;
+            }
+
+            // Show correct answers
+            questions.forEach((q, index) => {
+                const correctAnswer = document.createElement('div');
+                correctAnswer.classList.add('correct-answer');
+                correctAnswer.innerHTML = `<p>${index + 1}. ${q.question}</p>
+                    <p class="correct-answer">Correct Answer: ${q.options[q.answer]}</p>`;
+                resultDiv.appendChild(correctAnswer);
+            });
+        }
+
+        // User dropdown functionality
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>

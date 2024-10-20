@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grants & Funding</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-methods {
+            margin: 20px 0;
+        }
+
+        .donation-option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #228B22;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .donation-option:hover {
+            background-color: #e2f7e2;
+        }
+
+        .scanner-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0;
+            display: block;
+            border: 2px solid #228B22;
+            border-radius: 8px;
+        }
+
+        .certificate {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e2f7e2;
+            border: 1px solid #228B22;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .anonymity {
+            margin: 10px 0;
+        }
+
+        .improvement {
+            margin: 20px 0;
+        }
+
+        .donor-info {
+            margin: 10px 0;
+        }
+
+        .donor-info input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .donation-amount {
+            margin: 10px 0;
+        }
+
+        .donation-amount input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .download-button {
+            display: none;
+            padding: 10px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .download-button:hover {
+            background-color: #1E7B1E;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Grants & Funding for Forest Fire Prevention</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown" style="display: none;">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Explore Funding Opportunities</h2>
+        <p>Explore funding opportunities and grants available for fire prevention initiatives. Your contribution can make a significant difference.</p>
+
+        <div class="donation-methods">
+            <h3>Donation Options</h3>
+            <div class="donation-option">
+                <strong>1. One-Time Donation</strong><br>
+                Support our initiatives with a one-time contribution.
+            </div>
+            <div class="donation-option">
+                <strong>2. Monthly Subscription</strong><br>
+                Become a monthly supporter and help us continuously fight forest fires.
+            </div>
+            <div class="donation-option">
+                <strong>3. Corporate Sponsorship</strong><br>
+                Partner with us as a corporate sponsor to promote sustainability.
+            </div>
+            <div class="donation-option">
+                <strong>4. Fundraising Events</strong><br>
+                Participate in or organize fundraising events to raise awareness and funds.
+            </div>
+        </div>
+
+        <img src="QR.png" alt="Donation Scanner" class="scanner-image">
+        <p>Scan the image to donate using our secure payment method.</p>
+        Thank you for your generous donation to forest fire management efforts. Your support is vital in our mission to combat forest fires and protect our natural habitats. Each contribution helps provide the necessary resources for firefighting, forest restoration, and community preparedness. Your act of kindness is not only aiding in immediate response but also in long-term conservation efforts. We are deeply grateful for your commitment to preserving our forests and ensuring a sustainable future for generations to come. Together, we can make a significant impact.<br><br>
+
+With heartfelt thanks,<br>
+
+Forest Fire Team<br><br>
+
+How's that for a start? Anything you'd like to tweak or add?<br><br>
+
+        <div class="anonymity">
+            <label>
+                <input type="checkbox" id="anonymous-checkbox"> I prefer to remain anonymous
+            </label>
+        </div>
+
+        <div class="donor-info" id="donor-info">
+            <h3>Your Information</h3>
+            <input type="text" id="donor-name" placeholder="Your Name" disabled>
+            <div class="donation-amount">
+                <input type="number" id="donation-amount" placeholder="Donation Amount" min="1">
+            </div>
+        </div>
+
+        <button class="download-button" id="download-certificate">Download Certificate</button>
+
+        <div class="certificate" id="certificate" style="display: none;">
+            <h3>Donation Certificate</h3>
+            <p id="certificate-text"></p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+
+        const anonymousCheckbox = document.getElementById("anonymous-checkbox");
+        const donorInfo = document.getElementById("donor-info");
+        const downloadButton = document.getElementById("download-certificate");
+        const certificateText = document.getElementById("certificate-text");
+        const certificate = document.getElementById("certificate");
+
+        anonymousCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                donorInfo.style.display = "none";
+                document.getElementById("donor-name").disabled = true;
+                downloadButton.style.display = "none";
+            } else {
+                donorInfo.style.display = "block";
+                document.getElementById("donor-name").disabled = false;
+                downloadButton.style.display = "block";
+            }
+        });
+
+        document.getElementById("donation-amount").addEventListener("input", function() {
+            if (!anonymousCheckbox.checked) {
+                const name = document.getElementById("donor-name").value;
+                const amount = this.value;
+                downloadButton.style.display = name && amount ? "block" : "none";
+            }
+        });
+
+        document.getElementById("donor-name").addEventListener("input", function() {
+            if (!anonymousCheckbox.checked) {
+                const amount = document.getElementById("donation-amount").value;
+                downloadButton.style.display = this.value && amount ? "block" : "none";
+            }
+        });
+
+        downloadButton.addEventListener("click", function() {
+            const name = anonymousCheckbox.checked ? "Anonymous" : document.getElementById("donor-name").value;
+            const amount = document.getElementById("donation-amount").value;
+            certificateText.textContent = `Thank you, ${name}, for your generous donation of Rs${amount}!`;
+            certificate.style.display = "block";
+            this.style.display = "none";
+        });
+    </script>
+</body>
+</html>

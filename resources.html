@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prevention: Resources and Concerns</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            color: #228B22;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Tab Styles */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #1E7B1E;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #228B22;
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .call-to-action {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action:hover {
+            background-color: #1E7B1E;
+        }
+
+        /* Attractive List Styles */
+        .resources-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .resources-list li {
+            background-color: #e0f7e0;
+            border: 2px solid #228B22;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .resources-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .resources-list li a {
+            text-decoration: none;
+            color: #228B22;
+            font-weight: bold;
+            display: block;
+        }
+
+        .resources-list li::before {
+            content: '🔗';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 20px;
+        }
+
+        .resources-list li:hover a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire: Resources</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown" style="display: none;">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Introduction to Forest Fires</h2>
+        <p>Forest fires are a natural phenomenon but can have devastating effects on ecosystems, wildlife, and human life. Understanding the causes, risks, and prevention methods is crucial for mitigating these disasters.</p>
+
+        <div class="tabs">
+            <div class="tab" onclick="openTab('causes')">Causes</div>
+            <div class="tab" onclick="openTab('risks')">Risks</div>
+            <div class="tab" onclick="openTab('prevention')">Prevention</div>
+        </div>
+
+        <div id="causes" class="tab-content">
+            <h2>Understanding the Causes of Forest Fires</h2>
+            <p>Forest fires can be caused by natural occurrences, such as lightning strikes, or by human activities like campfires and discarded cigarettes. Understanding these causes is the first step in prevention.</p>
+        </div>
+
+        <div id="risks" class="tab-content">
+            <h2>Risks Associated with Forest Fires</h2>
+            <p>Forest fires pose significant risks, including loss of wildlife, damage to air quality, and destruction of property. Communities located near fire-prone areas must be vigilant.</p>
+        </div>
+
+        <div id="prevention" class="tab-content">
+            <h2>Preventive Measures</h2>
+            <p>There are several ways to prevent forest fires, including:</p>
+            <ul>
+                <li>Creating firebreaks to stop the spread of fire</li>
+                <li>Implementing controlled burns to manage underbrush</li>
+                <li>Educating the public on safe campfire practices</li>
+                <li>Enforcing fire bans during high-risk periods</li>
+            </ul>
+        </div>
+
+        <h2>Community Involvement in Fire Prevention</h2>
+        <p>Community engagement is vital in preventing forest fires. Local organizations can help raise awareness, organize clean-up days, and provide resources for fire prevention education.</p>
+
+        <div class="call-to-action">
+            <h3>Join Us in the Fight Against Forest Fires!</h3>
+            <p>Get involved in local initiatives to help prevent forest fires in your community.</p>
+            <a href="sign-up.html" style="color: white; font-weight: bold;">Sign Up Now</a>
+        </div>
+
+        <h2>Additional Resources</h2>
+        <p>Here are some resources you can explore:</p>
+        <ul class="resources-list">
+            <li><a href="https://www.nifc.gov/">National Interagency Fire Center</a></li>
+            <li><a href="https://www.fs.usda.gov/">U.S. Forest Service</a></li>
+            <li><a href="https://www.firewise.org/">Firewise USA</a></li>
+            <li><a href="https://www.fema.gov/">FEMA</a></li>
+            <li><a href="https://www.nps.gov/subjects/fire/index.htm">National Park Service Fire Management</a></li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Initialize by showing the first tab
+        openTab('causes');
+    </script>
+</body>
+</html>

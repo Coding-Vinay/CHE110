@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Education Platform</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            color: #228B22;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #1E7B1E;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .fun-facts {
+            background-color: #e6ffe6;
+            border: 1px solid #a5d6a7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            transition: transform 0.3s;
+        }
+
+        .fun-facts:hover {
+            transform: scale(1.02);
+        }
+
+        .game-section {
+            display: none;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9fbe7;
+            border: 1px solid #c6ff00;
+            border-radius: 5px;
+        }
+
+        .game-button {
+            display: inline-block;
+            background-color: #ffca28;
+            color: #3e2723;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .game-button:hover {
+            background-color: #ffd54f;
+            transform: scale(1.05);
+        }
+
+        /* Planting Game Styles */
+        #plantingGame {
+            display: none;
+            text-align: center;
+        }
+
+        #plantingGameCanvas {
+            border: 2px dashed #228B22;
+            margin-top: 10px;
+        }
+
+        /* User Dropdown */
+        #user-dropdown {
+            display: none;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #34a853;
+        }
+
+        #user-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E7B1E;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .tree-count {
+            font-weight: bold;
+            color: #228B22;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire Education Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome to the Forest Fire Education Platform!</h2>
+        <p>This platform is designed to educate children about forest fire prevention, safety tips, and environmental conservation. Here, you will find a variety of resources, fun facts, and engaging games.</p>
+
+        <h3>What You Will Learn</h3>
+        <p>Forest fires can be devastating to the environment. Understanding their causes and how to prevent them is crucial. You will learn:</p>
+        <ul>
+            <li>The primary causes of forest fires.</li>
+            <li>How to recognize fire-prone areas.</li>
+            <li>Tips for creating fire-resistant homes.</li>
+            <li>The importance of local reporting systems.</li>
+            <li>How to get involved with local NGOs and fire protection units.</li>
+            <li>Wildlife rescue efforts during forest fires.</li>
+        </ul>
+
+        <h3>Fun Facts About Forest Fires</h3>
+        <div class="fun-facts">
+            <h3>Did You Know?</h3>
+            <ul>
+                <li>More than 80% of wildfires are caused by humans!</li>
+                <li>Certain trees, like sequoias, rely on fire to reproduce.</li>
+                <li>Fire can play a natural role in forest ecosystems.</li>
+            </ul>
+        </div>
+
+        <h3>Engaging Games</h3>
+        <p>Check out these fun games that teach you about forest fire safety:</p>
+        <button class="game-button" onclick="toggleGame('plantingGame')">Planting Trees Game</button>
+
+        <!-- Planting Game Section -->
+        <div id="plantingGame" class="game-section">
+            <h3>Planting Trees Game</h3>
+            <p>Help restore the forest by planting trees! Click on the canvas to plant a tree.</p>
+            <canvas id="plantingGameCanvas" width="400" height="300"></canvas>
+            <p><button class="game-button" onclick="startPlanting()">Start Planting!</button></p>
+            <div class="tree-count" id="treeCountMessage"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+
+        function toggleGame(gameId) {
+            const games = document.querySelectorAll('.game-section');
+            games.forEach(game => {
+                if (game.id === gameId) {
+                    game.style.display = game.style.display === 'none' || game.style.display === '' ? 'block' : 'none';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+
+        // Planting Trees Game Functionality
+        const canvas = document.getElementById('plantingGameCanvas');
+        const ctx = canvas.getContext('2d');
+        let treeCount = 0;
+
+        function startPlanting() {
+            canvas.addEventListener('click', plantTree);
+            alert('Click on the canvas to plant a tree!');
+        }
+
+        function plantTree(event) {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Draw a simple tree
+            ctx.fillStyle = 'brown'; // Tree trunk
+            ctx.fillRect(x - 5, y - 20, 10, 20); // Trunk
+            ctx.fillStyle = 'green'; // Leaves
+            ctx.beginPath();
+            ctx.arc(x, y - 30, 15, 0, Math.PI * 2, true); // Leaves
+            ctx.fill();
+
+            // Update tree count and message
+            treeCount++;
+            document.getElementById('treeCountMessage').innerText = `${treeCount} trees planted! You may be small, but you're helping something big!`;
+        }
+    </script>
+</body>
+</html>

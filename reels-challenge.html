@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reels Challenge Platform</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1E7B1E;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .reel-upload {
+            margin-bottom: 20px;
+        }
+
+        .reel-list {
+            margin-top: 20px;
+            border-top: 2px solid #228B22;
+            padding-top: 10px;
+        }
+
+        .reel-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e9f5e9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .reel-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-section {
+            margin-top: 10px;
+        }
+
+        .review-input {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-input textarea {
+            margin-bottom: 10px;
+            resize: none;
+            height: 50px;
+        }
+
+        .rating {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .rating input {
+            margin: 0 5px;
+        }
+
+        #user-dropdown {
+            display: none;
+            position: absolute;
+            right: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #34a853;
+        }
+
+        #user-dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .use-of-reels {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 2px solid #228B22;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire: Reels Challenge Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fire-prone-areas.html">Fire-Prone Areas</a></li>
+                <li><a href="fire-resistant-homes.html">Fire-Resistant Homes</a></li>
+                <li><a href="local-reporting-system.html">Local Reporting System</a></li>
+                <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
+                <li><a href="ngo-page.html">NGO Page</a></li>
+                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="grants-funding.html">Grants & Funding</a></li>
+                <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="education-platform.html">Education Platform</a></li>
+                <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
+                <li><a href="quiz-page.html">Quiz Page</a></li>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="diy-projects.html">DIY Projects</a></li>
+                <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
+                <li><a href="reels-challenge.html">Reels Challenge</a></li>
+                <li><a href="#" id="user-tab">User ▼</a><br>
+                    <div id="user-dropdown">
+                        <a href="#">Sign In</a>
+                        <a href="#">Log Out</a>
+                        <a href="#">Rate Us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Upload Your Reels</h2>
+        <p>Share your video reels focused on forest fire concerns and prevention. Help spread awareness through your creativity!</p>
+        
+        <div class="reel-upload">
+            <input type="text" id="reel-title" placeholder="Reel Title" required>
+            <input type="file" id="reel-file" accept="video/*" required>
+            <button id="upload-reel">Upload Reel</button>
+        </div>
+
+        <div class="reel-list" id="reel-list">
+            <h3>Uploaded Reels</h3>
+            <!-- Uploaded reels will appear here -->
+        </div>
+    </section>
+
+    <section class="use-of-reels">
+        <h2>The Use of Reels in Forest Fire Awareness</h2>
+        <p>
+            Video reels are an engaging way to raise awareness about forest fire prevention. Here are some key benefits of using reels:
+        </p>
+        <p>
+            1. **Visual Impact**: Video can effectively convey the dangers of forest fires and the importance of prevention. The visual medium captures attention and can illustrate messages that words alone may fail to convey.
+        </p>
+        <p>
+            2. **Storytelling**: Reels allow individuals to share personal stories related to forest fires, making the issue relatable and real. Storytelling through video can motivate viewers to take action.
+        </p>
+        <p>
+            3. **Broad Reach**: Social media platforms prioritize video content, allowing reels to reach a wider audience. This is crucial for spreading awareness and mobilizing communities.
+        </p>
+        <p>
+            4. **Educational Content**: Reels can be informative, providing tips and strategies for preventing forest fires, as well as ways to respond when they occur. This can empower viewers to be proactive in their approach.
+        </p>
+        <p>
+            5. **Engagement and Interaction**: Video content encourages comments and shares, fostering community interaction. This engagement can lead to collective action and support for fire prevention initiatives.
+        </p>
+        <p>
+            In summary, reels are a dynamic and effective method for raising awareness about forest fire prevention. By leveraging the power of video, we can enhance public understanding and inspire meaningful action.
+        </p>
+    </section>
+
+    <script>
+        const uploadButton = document.getElementById('upload-reel');
+        const reelList = document.getElementById('reel-list');
+
+        uploadButton.addEventListener('click', function() {
+            const reelTitle = document.getElementById('reel-title').value;
+            const reelFile = document.getElementById('reel-file').files[0];
+
+            if (reelTitle && reelFile) {
+                const reelItem = document.createElement('div');
+                reelItem.className = 'reel-item';
+                reelItem.innerHTML = `
+                    <h4>${reelTitle}</h4>
+                    <video controls width="300">
+                        <source src="${URL.createObjectURL(reelFile)}" type="${reelFile.type}">
+                        Your browser does not support the video element.
+                    </video>
+                    <div class="review-section">
+                        <div class="rating">
+                            <label>Rate: </label>
+                            <input type="radio" name="rating-${reelTitle}" value="1">1
+                            <input type="radio" name="rating-${reelTitle}" value="2">2
+                            <input type="radio" name="rating-${reelTitle}" value="3">3
+                            <input type="radio" name="rating-${reelTitle}" value="4">4
+                            <input type="radio" name="rating-${reelTitle}" value="5">5
+                        </div>
+                        <div class="review-input">
+                            <textarea id="review-${reelTitle}" placeholder="Leave a review..."></textarea>
+                            <button onclick="submitReview('${reelTitle}')">Submit Review</button>
+                        </div>
+                    </div>
+                    <div id="reviews-${reelTitle}"></div>
+                `;
+                reelList.appendChild(reelItem);
+
+                // Clear input fields
+                document.getElementById('reel-title').value = '';
+                document.getElementById('reel-file').value = '';
+            } else {
+                alert('Please provide a reel title and a file.');
+            }
+        });
+
+        function submitReview(reelTitle) {
+            const reviewText = document.getElementById(`review-${reelTitle}`).value;
+            const rating = document.querySelector(`input[name="rating-${reelTitle}"]:checked`);
+
+            if (reviewText || rating) {
+                const reviewsContainer = document.getElementById(`reviews-${reelTitle}`);
+                const reviewItem = document.createElement('div');
+                reviewItem.innerHTML = `
+                    <p><strong>Review:</strong> ${reviewText} <strong>Rating:</strong> ${rating ? rating.value : 'No rating'}</p>
+                `;
+                reviewsContainer.appendChild(reviewItem);
+
+                // Clear review input
+                document.getElementById(`review-${reelTitle}`).value = '';
+                if (rating) {
+                    rating.checked = false;
+                }
+            } else {
+                alert('Please provide a review or rating.');
+            }
+        }
+
+        document.getElementById("user-tab").addEventListener("click", function() {
+            const dropdown = document.getElementById("user-dropdown");
+            dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
