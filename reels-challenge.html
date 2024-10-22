@@ -7,16 +7,17 @@
     <style>
         /* Internal CSS */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
             background-color: #228B22;
             color: white;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
 
@@ -35,6 +36,7 @@
         nav ul li {
             display: inline-block;
             margin: 0 15px;
+            position: relative; /* For dropdown positioning */
         }
 
         nav ul li a {
@@ -43,12 +45,13 @@
             font-weight: bold;
             padding: 12px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
 
         nav ul li a:hover {
             background-color: #fff;
             color: #228B22;
+            transform: scale(1.05);
         }
 
         section {
@@ -56,12 +59,39 @@
             margin: 2rem auto;
             max-width: 800px;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #228B22;
         }
 
         .reel-upload {
             margin-bottom: 20px;
+        }
+
+        .reel-upload input[type="text"],
+        .reel-upload input[type="file"] {
+            width: calc(50% - 12px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .reel-upload button {
+            padding: 10px 15px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reel-upload button:hover {
+            background-color: #1E7B1E;
         }
 
         .reel-list {
@@ -124,6 +154,7 @@
             padding: 10px;
             text-decoration: none;
             color: #34a853;
+            transition: background-color 0.3s ease;
         }
 
         #user-dropdown a:hover {
@@ -136,6 +167,21 @@
             border-top: 2px solid #228B22;
             background-color: #f9f9f9;
             border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .reel-upload input[type="text"],
+            .reel-upload input[type="file"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -150,18 +196,18 @@
                 <li><a href="local-reporting-system.html">Local Reporting System</a></li>
                 <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
                 <li><a href="ngo-page.html">NGO Page</a></li>
-                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="training-videos.html">Training Videos</a></li>
                 <li><a href="grants-funding.html">Grants & Funding</a></li>
                 <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="education-platform.html">Education Platform</a></li>
                 <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
                 <li><a href="quiz-page.html">Quiz Page</a></li>
-                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li>
                 <li><a href="diy-projects.html">DIY Projects</a></li>
                 <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
                 <li><a href="reels-challenge.html">Reels Challenge</a></li>
-                <li><a href="#" id="user-tab">User ▼</a><br>
+                <li><a href="#" id="user-tab">User ▼</a>
                     <div id="user-dropdown">
                         <a href="#">Sign In</a>
                         <a href="#">Log Out</a>
@@ -190,27 +236,13 @@
 
     <section class="use-of-reels">
         <h2>The Use of Reels in Forest Fire Awareness</h2>
-        <p>
-            Video reels are an engaging way to raise awareness about forest fire prevention. Here are some key benefits of using reels:
-        </p>
-        <p>
-            1. **Visual Impact**: Video can effectively convey the dangers of forest fires and the importance of prevention. The visual medium captures attention and can illustrate messages that words alone may fail to convey.
-        </p>
-        <p>
-            2. **Storytelling**: Reels allow individuals to share personal stories related to forest fires, making the issue relatable and real. Storytelling through video can motivate viewers to take action.
-        </p>
-        <p>
-            3. **Broad Reach**: Social media platforms prioritize video content, allowing reels to reach a wider audience. This is crucial for spreading awareness and mobilizing communities.
-        </p>
-        <p>
-            4. **Educational Content**: Reels can be informative, providing tips and strategies for preventing forest fires, as well as ways to respond when they occur. This can empower viewers to be proactive in their approach.
-        </p>
-        <p>
-            5. **Engagement and Interaction**: Video content encourages comments and shares, fostering community interaction. This engagement can lead to collective action and support for fire prevention initiatives.
-        </p>
-        <p>
-            In summary, reels are a dynamic and effective method for raising awareness about forest fire prevention. By leveraging the power of video, we can enhance public understanding and inspire meaningful action.
-        </p>
+        <p>Video reels are an engaging way to raise awareness about forest fire prevention. Here are some key benefits of using reels:</p>
+        <p>1. Visual Impact: Video can effectively convey the dangers of forest fires and the importance of prevention. The visual medium captures attention and can illustrate messages that words alone may fail to convey.</p>
+        <p>2. Storytelling: Reels allow individuals to share personal stories related to forest fires, making the issue relatable and real. Storytelling through video can motivate viewers to take action.</p>
+        <p>3. Broad Reach: Social media platforms prioritize video content, allowing reels to reach a wider audience. This is crucial for spreading awareness and mobilizing communities.</p>
+        <p>4. Educational Content: Reels can be informative, providing tips and strategies for preventing forest fires, as well as ways to respond when they occur. This can empower viewers to be proactive in their approach.</p>
+        <p>5. Engagement and Interaction: Video content encourages comments and shares, fostering community interaction. This engagement can lead to collective action and support for fire prevention initiatives.</p>
+        <p>In summary, reels are a dynamic and effective method for raising awareness about forest fire prevention. By leveraging the power of video, we can enhance public understanding and inspire meaningful action.</p>
     </section>
 
     <script>

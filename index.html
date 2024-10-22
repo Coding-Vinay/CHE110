@@ -65,6 +65,7 @@
         }
 
         .slider {
+            background-image: url();
             position: relative;
             max-width: 100%;
             height: 400px;
@@ -92,7 +93,7 @@
         }
 
         .user-menu button {
-            background-color: #fff;
+            background-color: lightgreen;
             color: #228B22;
             padding: 10px 20px;
             border: none;
@@ -258,11 +259,20 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .tab1{
+            background-color: rgb(74, 172, 65);
+            padding: 20px;
+            border-radius: 10%;
+        }
+        .tab1:hover {
+            background-color: white;
+            color: #228B22;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Forest Fire Prevention: Concerns, Causes, and Prevention</h1>
+        <h1>Forest Fire : Concerns And Prevention</h1>
         
         <!-- User Menu -->
         <div class="user-menu">
@@ -302,9 +312,9 @@
     <div class="slider">
         <div class="slides" id="slides">
             <img src="1.jpeg" alt="Forest Image 1">
-            <img src="1.jpeg" alt="Forest Image 2">
-            <img src="1.jpeg" alt="Forest Image 3">
-            <img src="1.jpeg" alt="Forest Image 4">
+            <img src="2.jpg" alt="Forest Image 2">
+            <img src="3.jpg" alt="Forest Image 3">
+            <img src="4.jpg" alt="Forest Image 4">
         </div>
     </div>
 
@@ -313,6 +323,37 @@
         <p>Explore different sections of our website to learn about forest fire prevention, fire-prone areas, wildlife rescue, and much more. Each section provides valuable information and resources to help you stay safe and informed.</p>
 
         <!-- Tabs Section -->
+        <div class="tabs">
+            <div class="tab1">
+                <h3>Fire-Prone Areas</h3>
+                <section>
+                    <h2>Introduction to Forest Fires</h2>
+                    <p>Forest fires, also known as wildfires or bushfires, are uncontrolled fires that occur in forests, grasslands, and other vegetative areas. While they are a natural part of some ecosystems, their increasing frequency due to human activity and climate change raises serious environmental, economic, and social concerns.</p>
+                
+                    <h2>Concerns</h2>
+                    <ul>
+                        <li><strong>Loss of biodiversity:</strong> Fires destroy habitats, endangering wildlife and ecosystems.</li>
+                        <li><strong>Climate change:</strong> Wildfires release carbon dioxide, exacerbating global warming.</li>
+                        <li><strong>Health risks:</strong> Smoke leads to respiratory issues, especially in vulnerable populations.</li>
+                        <li><strong>Property damage:</strong> Homes and infrastructure are at risk in fire-prone areas.</li>
+                        <li><strong>Economic impact:</strong> Costs of firefighting, healthcare, and rebuilding are substantial.</li>
+                    </ul>
+                
+                    <h2>Causes</h2>
+                    <ul>
+                        <li><strong>Natural:</strong> Lightning, volcanic eruptions, and spontaneous combustion.</li>
+                        <li><strong>Human activities:</strong> Unattended campfires, discarded cigarettes, arson, and agricultural practices.</li>
+                    </ul>
+                
+                    <h2>Effects</h2>
+                    <ul>
+                        <li><strong>Environmental:</strong> Habitat destruction, soil erosion, water contamination, and air pollution.</li>
+                        <li><strong>Human and economic:</strong> Health problems, loss of property, displacement, and financial costs.</li>
+                    </ul>
+                </section>
+                
+            </div>
+            
         <div class="tabs">
             <div class="tab">
                 <h3>Fire-Prone Areas</h3>
@@ -377,6 +418,95 @@
             <button onclick="signIn()">Sign In</button>
         </div>
     </div>
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Whether you have questions, suggestions, or need assistance, feel free to reach out to us through the channels below:</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Email Us</h3>
+                <p>For general inquiries, email us at: <a href="mailto:info@forestfireprevention.org">info@forestfireprevention.org</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Call Us</h3>
+                <p>Have an urgent concern? Call our hotline: <strong>1-800-555-FIRE</strong></p>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Follow Us</h3>
+                <p>Stay updated with our latest initiatives and news:</p>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .contact-us {
+            background-color: #f4f4f4;
+            padding: 3rem;
+            margin-top: 3rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .contact-us h2 {
+            color: #228B22;
+            margin-bottom: 1.5rem;
+        }
+    
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+    
+        .contact-item {
+            width: 30%;
+            min-width: 250px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .contact-item h3 {
+            color: #228B22;
+            margin-bottom: 10px;
+        }
+    
+        .contact-item p, .contact-item ul {
+            margin: 0;
+        }
+    
+        .contact-item a {
+            color: #228B22;
+            text-decoration: none;
+        }
+    
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    
+        .contact-item ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+    
+        .contact-item ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+    
+    
+    
 
     <!-- JavaScript for Image Slider, User Menu, and Sign In Modal -->
     <script>
@@ -388,7 +518,7 @@
 
         function changeSlide() {
             currentSlide = (currentSlide + 1) % 4; // Total 4 slides, index 0-3
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            slides.style.transform = `translateX(-${currentSlide * 25}%)`;
         }
 
         setInterval(changeSlide, 5000); // Change slide every 5 seconds

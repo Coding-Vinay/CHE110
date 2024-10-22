@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music & Podcast Platform</title>
+    <title>Forest Fire Prevention: Music & Podcast Platform</title>
     <style>
         /* Internal CSS */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
             background-color: #228B22;
             color: white;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
 
@@ -35,6 +36,7 @@
         nav ul li {
             display: inline-block;
             margin: 0 15px;
+            position: relative; /* For dropdown positioning */
         }
 
         nav ul li a {
@@ -43,12 +45,13 @@
             font-weight: bold;
             padding: 12px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
 
         nav ul li a:hover {
             background-color: #fff;
             color: #228B22;
+            transform: scale(1.05);
         }
 
         section {
@@ -56,12 +59,39 @@
             margin: 2rem auto;
             max-width: 800px;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #228B22;
         }
 
         .song-upload {
             margin-bottom: 20px;
+        }
+
+        .song-upload input[type="text"],
+        .song-upload input[type="file"] {
+            width: calc(50% - 12px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .song-upload button {
+            padding: 10px 15px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .song-upload button:hover {
+            background-color: #1E7B1E;
         }
 
         .song-list {
@@ -132,10 +162,26 @@
             padding: 10px;
             text-decoration: none;
             color: #34a853;
+            transition: background-color 0.3s ease;
         }
 
         #user-dropdown a:hover {
             background-color: #f1f1f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .song-upload input[type="text"],
+            .song-upload input[type="file"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -150,18 +196,18 @@
                 <li><a href="local-reporting-system.html">Local Reporting System</a></li>
                 <li><a href="fire-protection-units.html">Contact Fire Units</a></li>
                 <li><a href="ngo-page.html">NGO Page</a></li>
-                <li><a href="training-videos.html">Training Videos</a></li><br><br>
+                <li><a href="training-videos.html">Training Videos</a></li>
                 <li><a href="grants-funding.html">Grants & Funding</a></li>
                 <li><a href="wildlife-rescue.html">Wildlife Rescue</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="education-platform.html">Education Platform</a></li>
                 <li><a href="eco-friendly-products.html">Eco-friendly Products</a></li>
                 <li><a href="quiz-page.html">Quiz Page</a></li>
-                <li><a href="personal-experiences.html">Personal Experiences</a></li><br><br>
+                <li><a href="personal-experiences.html">Personal Experiences</a></li>
                 <li><a href="diy-projects.html">DIY Projects</a></li>
                 <li><a href="music-podcast.html">Music & Podcast Platform</a></li>
                 <li><a href="reels-challenge.html">Reels Challenge</a></li>
-                <li><a href="#" id="user-tab">User ▼</a><br>
+                <li><a href="#" id="user-tab">User ▼</a>
                     <div id="user-dropdown">
                         <a href="#">Sign In</a>
                         <a href="#">Log Out</a>
@@ -194,19 +240,19 @@
             Music can serve as a powerful tool for raising awareness about forest fire prevention and management. Here are several ways music contributes to this cause:
         </p>
         <p>
-            1. **Emotional Connection**: Music evokes emotions that can foster a deeper connection to the issues surrounding forest fires. By appealing to listeners’ feelings, songs can inspire action and awareness.
+            1. Emotional Connection: Music evokes emotions that can foster a deeper connection to the issues surrounding forest fires. By appealing to listeners’ feelings, songs can inspire action and awareness.
         </p>
         <p>
-            2. **Educational Value**: Many songs incorporate educational messages about the importance of preventing forest fires, the consequences of negligence, and how to respond during emergencies. These messages can be more easily remembered when set to music.
+            2. Educational Value: Many songs incorporate educational messages about the importance of preventing forest fires, the consequences of negligence, and how to respond during emergencies. These messages can be more easily remembered when set to music.
         </p>
         <p>
-            3. **Community Engagement**: Music has the ability to bring communities together. Events such as benefit concerts can raise funds for fire prevention initiatives while also educating attendees about the issue.
+            3. Community Engagement: Music has the ability to bring communities together. Events such as benefit concerts can raise funds for fire prevention initiatives while also educating attendees about the issue.
         </p>
         <p>
-            4. **Cultural Impact**: In many cultures, music plays a vital role in storytelling. Songs that tell the story of a community affected by forest fires can highlight the human impact of these disasters, encouraging listeners to take the threat seriously.
+            4. Cultural Impact: In many cultures, music plays a vital role in storytelling. Songs that tell the story of a community affected by forest fires can highlight the human impact of these disasters, encouraging listeners to take the threat seriously.
         </p>
         <p>
-            5. **Motivational Messages**: Uplifting songs can motivate individuals and communities to participate in fire prevention activities, volunteer for local initiatives, or support policy changes.
+            5. Motivational Messages: Uplifting songs can motivate individuals and communities to participate in fire prevention activities, volunteer for local initiatives, or support policy changes.
         </p>
         <p>
             In conclusion, music is not just a source of entertainment; it can also be a catalyst for change. By spreading messages of prevention and action, music can play a crucial role in combating the threat of forest fires.
