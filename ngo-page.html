@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NGO Page</title>
     <style>
-        /* Internal CSS */
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -145,6 +145,7 @@
 
     <section>
         <h2>About Our NGO</h2>
+        <img src="16.jpg">
         <p>We are dedicated to preventing forest fires and protecting our natural habitats. Our mission is to educate communities about fire safety, provide resources for prevention, and respond effectively to fire emergencies. Join us in making a difference.</p>
         
         <h3>Our Mission</h3>
@@ -197,20 +198,19 @@
         });
 
         document.getElementById("volunteer-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+            event.preventDefault(); 
 
-            // Gather input values
+
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const phone = document.getElementById("phone").value;
             const skills = document.getElementById("skills").value;
 
-            // You can add AJAX functionality here to send the data to the server
+            
 
-            // Show confirmation message
             document.getElementById("confirmation-message").style.display = "block";
 
-            // Reset the form
+            
             this.reset();
         });
     </script>

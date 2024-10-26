@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Page</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -113,13 +113,13 @@
             font-weight: bold;
         }
 
-        /* Correct answer styling */
+        
         .correct-answer {
             color: green;
             font-weight: bold;
         }
 
-        /* User Dropdown */
+        
         #user-dropdown {
             display: none;
             position: absolute;
@@ -181,7 +181,7 @@
 
         <div class="quiz-container">
             <form id="quizForm">
-                <!-- Questions will be injected here -->
+                
             </form>
             <button class="submit-button" onclick="submitQuiz()">Submit Quiz</button>
             <div id="result" class="result"></div>
@@ -189,7 +189,7 @@
     </section>
 
     <script>
-        // Questions array
+        
         const questions = [
             {
                 question: "What is one of the main causes of forest fires?",
@@ -268,7 +268,7 @@
             }
         ];
 
-        // Inject questions into the form
+        
         const quizForm = document.getElementById('quizForm');
         questions.forEach((q, index) => {
             const questionElement = document.createElement('div');
@@ -287,7 +287,7 @@
             quizForm.appendChild(questionElement);
         });
 
-        // Submit quiz function
+        
         function submitQuiz() {
             let score = 0;
             const resultDiv = document.getElementById('result');
@@ -306,7 +306,7 @@
                 resultDiv.innerHTML += `<br><span class="tree-message">Nice try! You can plant ${treesToPlant} tree(s) to make your score 15!</span>`;
             }
 
-            // Show correct answers
+            
             questions.forEach((q, index) => {
                 const correctAnswer = document.createElement('div');
                 correctAnswer.classList.add('correct-answer');
@@ -316,7 +316,7 @@
             });
         }
 
-        // User dropdown functionality
+        
         document.getElementById("user-tab").addEventListener("click", function() {
             const dropdown = document.getElementById("user-dropdown");
             dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";

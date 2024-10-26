@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forest Fire Education Platform</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -126,7 +126,7 @@
             transform: scale(1.05);
         }
 
-        /* Planting Game Styles */
+       
         #plantingGame {
             display: none;
             text-align: center;
@@ -137,7 +137,7 @@
             margin-top: 10px;
         }
 
-        /* User Dropdown */
+       
         #user-dropdown {
             display: none;
             position: absolute;
@@ -159,7 +159,7 @@
             background-color: #f1f1f1;
         }
 
-        /* Footer */
+       
         footer {
             background-color: #1E7B1E;
             color: white;
@@ -239,7 +239,7 @@
         <p>Check out these fun games that teach you about forest fire safety:</p>
         <button class="game-button" onclick="toggleGame('plantingGame')">Planting Trees Game</button>
 
-        <!-- Planting Game Section -->
+        
         <div id="plantingGame" class="game-section">
             <h3>Planting Trees Game</h3>
             <p>Help restore the forest by planting trees! Click on the canvas to plant a tree.</p>
@@ -266,7 +266,7 @@
             });
         }
 
-        // Planting Trees Game Functionality
+        
         const canvas = document.getElementById('plantingGameCanvas');
         const ctx = canvas.getContext('2d');
         let treeCount = 0;
@@ -289,7 +289,7 @@
             ctx.arc(x, y - 30, 15, 0, Math.PI * 2, true); // Leaves
             ctx.fill();
 
-            // Update tree count and message
+           
             treeCount++;
             document.getElementById('treeCountMessage').innerText = `${treeCount} trees planted! You may be small, but you're helping something big!`;
         }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forest Fire Prevention: Music & Podcast Platform</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -36,7 +36,7 @@
         nav ul li {
             display: inline-block;
             margin: 0 15px;
-            position: relative; /* For dropdown positioning */
+            position: relative; 
         }
 
         nav ul li a {
@@ -169,7 +169,6 @@
             background-color: #f1f1f1;
         }
 
-        /* Responsive Design */
         @media (max-width: 600px) {
             nav ul li {
                 display: block;
@@ -220,6 +219,7 @@
 
     <section>
         <h2>Upload Your Songs and Listen</h2>
+        
         <p>Share your music or podcasts focused on forest fire concerns and prevention. Help spread awareness through your creativity!</p>
         
         <div class="song-upload">
@@ -230,7 +230,7 @@
 
         <div class="song-list" id="song-list">
             <h3>Uploaded Songs</h3>
-            <!-- Uploaded songs will appear here -->
+            
         </div>
     </section>
 
@@ -294,7 +294,7 @@
                 `;
                 songList.appendChild(songItem);
 
-                // Clear input fields
+                
                 document.getElementById('song-title').value = '';
                 document.getElementById('song-file').value = '';
             } else {
@@ -314,7 +314,7 @@
                 `;
                 reviewsContainer.appendChild(reviewItem);
 
-                // Clear review input
+                
                 document.getElementById(`review-${songTitle}`).value = '';
                 if (rating) {
                     rating.checked = false;

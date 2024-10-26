@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildlife Rescue</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -177,7 +177,7 @@
             dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
         });
 
-        // Initialize total saved count from local storage
+        
         let totalSaved = localStorage.getItem("totalSaved") ? parseInt(localStorage.getItem("totalSaved")) : 0;
         document.getElementById("total-saved").textContent = totalSaved;
 
@@ -188,16 +188,16 @@
                 localStorage.setItem("totalSaved", totalSaved);
                 document.getElementById("total-saved").textContent = totalSaved;
 
-                // Display appreciation message with animation
+                
                 const appreciationMessage = document.getElementById("appreciation-message");
                 appreciationMessage.textContent = `Thank you! You have successfully logged the recovery of ${savedCount} animals.`;
                 appreciationMessage.classList.add("appreciation");
                 appreciationMessage.style.display = "block";
 
-                // Reset the input field
+                
                 document.getElementById("wildlife-saved").value = '';
 
-                // Animation reset after 2 seconds
+
                 setTimeout(() => {
                     appreciationMessage.style.display = "none";
                 }, 2000);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Fire Units</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -109,7 +109,7 @@
             border-radius: 5px;
         }
 
-        /* User Dropdown Style */
+       
         #user-dropdown {
             display: none;
             position: absolute;
@@ -168,6 +168,7 @@
 
     <section>
         <h2>Contact Fire Units</h2>
+        <img src="13.jpg" height="300">
         <p>Find contact details for local and native fire protection units in case of emergencies. You can also send a direct message to the fire units below.</p>
 
         <form id="contact-form">
@@ -198,19 +199,17 @@
         });
 
         document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+            event.preventDefault(); 
 
-            // Gather input values
+
             const name = document.getElementById("name").value;
             const location = document.getElementById("location").value;
             const message = document.getElementById("message").value;
 
-            // You can add AJAX functionality here to send the data to the server
-
-            // Show confirmation message
+           
             document.getElementById("confirmation-message").style.display = "block";
 
-            // Reset the form
+            
             this.reset();
         });
     </script>

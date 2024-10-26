@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Reporting System</title>
     <style>
-        /* Internal CSS */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -100,7 +100,7 @@
             background-color: #1E7B1E;
         }
 
-        /* User Dropdown Style */
+       
         #user-dropdown {
             display: none;
             position: absolute;
@@ -123,7 +123,7 @@
             background-color: #f0f0f0;
         }
 
-        /* Submitted Reports Section */
+        
         .submitted-reports {
             margin-top: 2rem;
             padding: 1rem;
@@ -173,6 +173,7 @@
 
     <section>
         <h2>Local Reporting System</h2>
+        <img src="15.gif" height="250">
         <p>A platform to report forest fire risks and fire-related concerns in your local area. Please fill in the form below to submit your report.</p>
 
         <form id="report-form">
@@ -204,23 +205,23 @@
         });
 
         document.getElementById("report-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+            event.preventDefault(); 
 
-            // Gather report details
+
             const name = document.getElementById("name").value;
             const location = document.getElementById("location").value;
             const description = document.getElementById("description").value;
 
-            // Create report item
+            
             const reportItem = document.createElement("div");
             reportItem.className = "report-item";
             reportItem.innerHTML = `<strong>Name:</strong> ${name}<br><strong>Location:</strong> ${location}<br><strong>Description:</strong> ${description}`;
 
-            // Append report item to the reports list
+            
             document.getElementById("reports-list").appendChild(reportItem);
 
             alert('Thank you for your report! We will investigate your concerns.');
-            this.reset(); // Reset the form fields after submission
+            this.reset(); 
         });
     </script>
 </body>

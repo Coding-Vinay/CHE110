@@ -101,6 +101,7 @@
             cursor: pointer;
             position: relative;
             border-radius: 5px;
+            font-size: 20px;
         }
 
         .user-menu button:hover {
@@ -274,7 +275,7 @@
     <header>
         <h1>Forest Fire : Concerns And Prevention</h1>
         
-        <!-- User Menu -->
+        
         <div class="user-menu">
             <button id="userButton" onclick="toggleUserOptions()">User</button>
             <div class="user-options" id="userOptions">
@@ -284,7 +285,7 @@
             </div>
         </div>
 
-        <!-- Navigation Menu -->
+    
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -308,7 +309,7 @@
         </nav>
     </header>
 
-    <!-- Image Slider Section -->
+    
     <div class="slider">
         <div class="slides" id="slides">
             <img src="1.jpeg" alt="Forest Image 1">
@@ -322,7 +323,7 @@
         <h2>Overview of Our Website</h2>
         <p>Explore different sections of our website to learn about forest fire prevention, fire-prone areas, wildlife rescue, and much more. Each section provides valuable information and resources to help you stay safe and informed.</p>
 
-        <!-- Tabs Section -->
+        
         <div class="tabs">
             <div class="tab1">
                 <h3>Fire-Prone Areas</h3>
@@ -408,7 +409,7 @@
         </div>
     </section>
 
-    <!-- Sign In Modal -->
+
     <div class="modal" id="signInModal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -421,18 +422,18 @@
     <section class="contact-us">
         <h2>Contact Us</h2>
         <p>We’d love to hear from you! Whether you have questions, suggestions, or need assistance, feel free to reach out to us through the channels below:</p>
-        
+    
         <div class="contact-info">
             <div class="contact-item">
                 <h3>Email Us</h3>
                 <p>For general inquiries, email us at: <a href="mailto:info@forestfireprevention.org">info@forestfireprevention.org</a></p>
             </div>
-            
+    
             <div class="contact-item">
                 <h3>Call Us</h3>
                 <p>Have an urgent concern? Call our hotline: <strong>1-800-555-FIRE</strong></p>
             </div>
-            
+    
             <div class="contact-item">
                 <h3>Follow Us</h3>
                 <p>Stay updated with our latest initiatives and news:</p>
@@ -446,8 +447,15 @@
     </section>
     
     <style>
+        
         .contact-us {
-            background-color: #f4f4f4;
+            font-weight: bold;
+            background-image: url('5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 1.4;
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 3rem;
             margin-top: 3rem;
             text-align: center;
@@ -456,15 +464,16 @@
         }
     
         .contact-us h2 {
-            color: #228B22;
+            color: #2E8B57;
             margin-bottom: 1.5rem;
+            font-size: 40px;
         }
     
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 20px;
+            gap: 10px;
         }
     
         .contact-item {
@@ -474,10 +483,16 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.9s ease;
+        }
+    
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
     
         .contact-item h3 {
-            color: #228B22;
+            color: #2E8B57;
             margin-bottom: 10px;
         }
     
@@ -486,11 +501,13 @@
         }
     
         .contact-item a {
-            color: #228B22;
+            color: #2E8B57;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
     
         .contact-item a:hover {
+            color: #006400;
             text-decoration: underline;
         }
     
@@ -503,12 +520,42 @@
         .contact-item ul li {
             margin-bottom: 5px;
         }
+    
+        
+        figure {
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+        }
+    
+        figcaption {
+            font-style: italic;
+            color: #228B22;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+    
+        figure:hover figcaption {
+            color: #006400;
+        }
+    
+        
+        img {
+            border: 2px solid #2E8B57;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
     </style>
     
     
     
 
-    <!-- JavaScript for Image Slider, User Menu, and Sign In Modal -->
+    
     <script>
         let currentSlide = 0;
         const slides = document.getElementById('slides');
@@ -517,11 +564,11 @@
         const logoutButton = document.getElementById('logoutButton');
 
         function changeSlide() {
-            currentSlide = (currentSlide + 1) % 4; // Total 4 slides, index 0-3
+            currentSlide = (currentSlide + 1) % 4; 
             slides.style.transform = `translateX(-${currentSlide * 25}%)`;
         }
 
-        setInterval(changeSlide, 5000); // Change slide every 5 seconds
+        setInterval(changeSlide, 5000); 
 
         function toggleUserOptions() {
             userOptions.style.display = userOptions.style.display === 'block' ? 'none' : 'block';
@@ -550,18 +597,18 @@
             const username = document.getElementById('username').value;
             if (username) {
                 document.getElementById('userButton').textContent = username;
-                logoutButton.style.display = 'block'; // Show Log Out button
-                closeModal(); // Close the modal
-                userOptions.style.display = 'none'; // Hide user options
+                logoutButton.style.display = 'block'; 
+                closeModal(); 
+                userOptions.style.display = 'none'; 
             } else {
                 alert("Please enter a name.");
             }
         }
 
         function logout() {
-            document.getElementById('userButton').textContent = "User"; // Reset button text
-            logoutButton.style.display = 'none'; // Hide Log Out button
-            userOptions.style.display = 'none'; // Hide user options
+            document.getElementById('userButton').textContent = "User";
+            logoutButton.style.display = 'none'; 
+            userOptions.style.display = 'none'; 
         }
     </script>
 </body>

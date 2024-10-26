@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reels Challenge Platform</title>
     <style>
-        /* Internal CSS */
+       
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -36,7 +36,7 @@
         nav ul li {
             display: inline-block;
             margin: 0 15px;
-            position: relative; /* For dropdown positioning */
+            position: relative;
         }
 
         nav ul li a {
@@ -169,7 +169,7 @@
             border-radius: 8px;
         }
 
-        /* Responsive Design */
+        
         @media (max-width: 600px) {
             nav ul li {
                 display: block;
@@ -230,7 +230,7 @@
 
         <div class="reel-list" id="reel-list">
             <h3>Uploaded Reels</h3>
-            <!-- Uploaded reels will appear here -->
+            
         </div>
     </section>
 
@@ -280,7 +280,7 @@
                 `;
                 reelList.appendChild(reelItem);
 
-                // Clear input fields
+
                 document.getElementById('reel-title').value = '';
                 document.getElementById('reel-file').value = '';
             } else {
@@ -300,7 +300,7 @@
                 `;
                 reviewsContainer.appendChild(reviewItem);
 
-                // Clear review input
+                
                 document.getElementById(`review-${reelTitle}`).value = '';
                 if (rating) {
                     rating.checked = false;
